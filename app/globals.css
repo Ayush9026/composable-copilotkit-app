@@ -1,0 +1,205 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 2, 6, 23;
+  --background-rgb: 255, 255, 255;
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --accent-primary: 99, 102, 241;
+  /* indigo-500 */
+  --accent-secondary: 168, 85, 247;
+  /* purple-500 */
+  --accent-vibrant: 236, 72, 153;
+  /* pink-500 */
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+/* --- Ultimate Animated Background --- */
+.bg-mesh {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.bg-mesh::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(at 10% 10%, hsla(250, 100%, 95%, 1) 0%, transparent 40%),
+    radial-gradient(at 90% 10%, hsla(280, 100%, 95%, 1) 0%, transparent 40%),
+    radial-gradient(at 50% 50%, hsla(220, 100%, 97%, 1) 0%, transparent 50%),
+    radial-gradient(at 10% 90%, hsla(190, 100%, 95%, 1) 0%, transparent 40%),
+    radial-gradient(at 90% 90%, hsla(330, 100%, 95%, 1) 0%, transparent 40%);
+  filter: blur(80px) saturate(180%);
+  opacity: 0.8;
+  animation: mesh-drift 15s ease-in-out infinite alternate;
+}
+
+@keyframes mesh-drift {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+
+  100% {
+    transform: scale(1.15) translate(30px, -20px);
+  }
+}
+
+@layer components {
+
+  /* High-Fidelity Glassmorphism */
+  .glass-modern {
+    @apply bg-white/60 backdrop-blur-2xl border border-white/80;
+    box-shadow:
+      0 4px 6px -1px rgba(0, 0, 0, 0.05),
+      0 10px 15px -3px rgba(0, 0, 0, 0.05),
+      inset 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+
+  .glass-card-ultra {
+    @apply bg-white/70 backdrop-blur-3xl border border-white/90 rounded-[2.5rem];
+    box-shadow:
+      0 20px 50px -12px rgba(0, 0, 0, 0.08),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+  }
+
+  .glass-sidebar {
+    @apply bg-white/30 backdrop-blur-2xl border-r border-white/40;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 30px rgba(99, 102, 241, 0.4);
+  }
+
+  .floating {
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Animations */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-in {
+  animation: fadeInScale 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* --- CopilotKit Custom UI Overrides --- */
+/* Target multiple potential class names for maximum compatibility */
+.ultra-chat .copilot-kit-chat-send-button,
+.ultra-chat .ck-send-button,
+.ultra-chat .ck-chat-send-button,
+.ultra-chat button[type="submit"].copilot-kit-chat-send-button {
+  background-color: #000000 !important;
+  border-radius: 9999px !important;
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: none !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  cursor: pointer !important;
+  margin-left: 8px !important;
+}
+
+.ultra-chat .copilot-kit-chat-send-button:hover,
+.ultra-chat .ck-send-button:hover {
+  background-color: #1a1a1a !important;
+  transform: scale(1.05) translateY(-1px) !important;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25) !important;
+}
+
+.ultra-chat .copilot-kit-chat-send-button svg,
+.ultra-chat .ck-send-button svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  width: 22px !important;
+  height: 22px !important;
+}
+
+/* Custom styling for the input box */
+.ultra-chat .copilot-kit-chat-input-container,
+.ultra-chat .ck-chat-input-container {
+  @apply rounded-[2rem] border border-slate-200/80 backdrop-blur-xl mb-4 mx-6 !important;
+  background-color: rgba(255, 255, 255, 0.6) !important;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.03) !important;
+  padding: 4px 4px 4px 12px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.ultra-chat .copilot-kit-chat-input,
+.ultra-chat .ck-chat-input {
+  @apply border-none text-[15px] font-medium py-4 px-4 focus:ring-0 !important;
+  background-color: transparent !important;
+  color: #1e293b !important;
+}
+
+/* Hide default CopilotKit elements that clutter the UI */
+.ultra-chat .copilot-kit-chat-header,
+.ultra-chat .ck-chat-header {
+  @apply hidden !important;
+}
+
+.ultra-chat .copilot-kit-chat-messages-container,
+.ultra-chat .ck-chat-messages-container {
+  @apply bg-transparent !important;
+}
+
+/* Response bubbles styling */
+.ultra-chat .copilot-kit-chat-message-content {
+  @apply text-[15px] leading-relaxed font-normal text-slate-700 !important;
+}
+
+.ultra-chat .copilot-kit-chat-message-user .copilot-kit-chat-message-content {
+  @apply bg-slate-900 text-white rounded-[1.5rem] px-5 py-3 !important;
+}
+
+.ultra-chat .copilot-kit-chat-message-assistant .copilot-kit-chat-message-content {
+  @apply bg-white border border-slate-100 shadow-sm rounded-[1.5rem] px-5 py-3 !important;
+}
