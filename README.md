@@ -111,7 +111,3 @@ For a full walkthrough of how this app was built and the architecture behind the
 
 ---
 
-## 🤝 Contributing
-
-Contributions are welcome! If you have ideas for new neural nodes or UI improvements, feel free to open an issue or submit a pull request.
-
