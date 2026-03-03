@@ -31,14 +31,14 @@ def agent_node(state: AgentState) -> AgentState:
         print("Using Google Gemini LLM (gemini-pro)")
         llm = ChatGoogleGenerativeAI(
             model="gemini-pro",
-            temperature=0.7,
+            temperature=0.2,
             max_output_tokens=500
         )
     else:
         print("Using OpenAI LLM")
         llm = ChatOpenAI(
             model="gpt-4o-mini",
-            temperature=0.7,
+            temperature=0.2,
             max_tokens=500
         )
     
