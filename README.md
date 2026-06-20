@@ -1,6 +1,8 @@
 # 🧩 Composable CopilotKit App
 
-A powerful, multi-agent AI workspace built with **Next.js**, **CopilotKit**, and **LangGraph**. This application demonstrates a sophisticated "Neural Node" architecture where specialized agents collaborate to solve complex reasoning and development tasks.
+Hi
+
+A powerful, multi-agent AI workspace built with **Next.js**, **CopilotKit**, and **LangGraph**. This application demonstrates a sophisticated "Neural Node" architecture where specialized agents col[...]
 
 ![Project Banner](https://img.shields.io/badge/AI-LangGraph-blueviolet?style=for-the-badge)
 ![Project Banner](https://img.shields.io/badge/Framework-Next.js%2014-black?style=for-the-badge)
@@ -8,7 +10,7 @@ A powerful, multi-agent AI workspace built with **Next.js**, **CopilotKit**, and
 
 ## 🚀 Overview
 
-The Composable CopilotKit App is designed as a unified interface for interacting with advanced AI agents. By leveraging **LangGraph** on the backend, the app manages complex state-driven agentic workflows, while **CopilotKit** provides a seamless, integrated chat experience within a modern, glassmorphic React frontend.
+The Composable CopilotKit App is designed as a unified interface for interacting with advanced AI agents. By leveraging **LangGraph** on the backend, the app manages complex state-driven agentic w[...]
 
 ### 🧠 Core Neural Nodes
 
