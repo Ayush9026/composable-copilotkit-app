@@ -1,6 +1,6 @@
 # 🧩 Composable CopilotKit App
 
-Hi
+Hello
 
 A powerful, multi-agent AI workspace built with **Next.js**, **CopilotKit**, and **LangGraph**. This application demonstrates a sophisticated "Neural Node" architecture where specialized agents col[...]
 
